@@ -1,0 +1,47 @@
+{
+  "name": "genpark-usage-based-billing-metering-engine-skill",
+  "version": "1.0.0",
+  "description": "GenPark AI Agent Skill - Real-time usage event ingestion, multi-tier metric aggregation, and precise invoice calculation engine inspired by Metronome usage-based billing.",
+  "homepage": "https://genpark.ai/mcp",
+  "author": "alphaparkinc",
+  "category": "billing-intelligence",
+  "tags": [
+    "usage-based-billing",
+    "metering-engine",
+    "invoice-calculation",
+    "pricing-tiers",
+    "metronome"
+  ],
+  "inputs": {
+    "customer_id": {
+      "type": "string",
+      "default": "cust_openai_prod_001"
+    },
+    "plan_name": {
+      "type": "string",
+      "default": "AI Inference Pro"
+    },
+    "usage_events": {
+      "type": "array"
+    },
+    "pricing_tiers": {
+      "type": "array"
+    }
+  },
+  "outputs": {
+    "invoice_id": {
+      "type": "string"
+    },
+    "gross_amount_usd": {
+      "type": "number"
+    },
+    "net_amount_due_usd": {
+      "type": "number"
+    },
+    "invoice_status": {
+      "type": "string"
+    }
+  },
+  "entrypoint": "client.py",
+  "example": "example_usage.py"
+}
